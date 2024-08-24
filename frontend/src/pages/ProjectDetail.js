@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
     const { id } = useParams();
-    const projectsPageData = useFetch("http://localhost:1337/api/projects-page?populate[Project][populate][Image]=*&populate[Project][populate][ProjectPage][populate][ProjectInfoSegment][populate][Image]=*&populate[ProjectPage]=*")?.data;
+    const projectsPageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/projects-page?populate[Project][populate][Image]=*&populate[Project][populate][ProjectPage][populate][ProjectInfoSegment][populate][Image]=*&populate[ProjectPage]=*")?.data;
     const projectPageData = projectsPageData?.attributes?.Project?.[id - 1]?.ProjectPage;
     const segmentData = projectPageData?.ProjectInfoSegment || [];
 
@@ -17,7 +17,7 @@ const ProjectDetail = () => {
                     <Title>{segment?.Title}</Title>
                     <Separator />
                     <Description reversed={index % 2 === 0}>
-                        <Image src={`http://localhost:1337${segment.Image.data.attributes.url}`} alt={segment?.Title} />
+                        <Image src={`https://tranquil-citadel-56220-32a830561abf.herokuapp.com${segment.Image.data.attributes.url}`} alt={segment?.Title} />
                         <Text>{segment?.Description}</Text>
                     </Description>
                 </Segment>

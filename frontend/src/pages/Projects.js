@@ -4,7 +4,7 @@ import styled from "styled-components";
 import useFetch from "../services/strapi";
 
 const Projects = () => {
-    const projectsPageData = useFetch("http://localhost:1337/api/projects-page/?populate[Project][populate]=Image")?.data;
+    const projectsPageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/projects-page/?populate[Project][populate]=Image")?.data;
     const projects = projectsPageData?.attributes?.Project || [];
 
     return (
@@ -13,7 +13,7 @@ const Projects = () => {
                 {projects.map((proj) => (
                     <ProjectCard key={proj.id}>
                         <Link to={`/projects/${proj.id}`}>
-                            <Image src={`http://localhost:1337${proj.Image.data.attributes.url}`} alt={proj.Title} />
+                            <Image src={`https://tranquil-citadel-56220-32a830561abf.herokuapp.com${proj.Image.data.attributes.url}`} alt={proj.Title} />
                             <Overlay>
                                 <ProjectTitle>{proj.Title}</ProjectTitle>
                                 <ProjectDescription>{proj.BriefDescription}</ProjectDescription>

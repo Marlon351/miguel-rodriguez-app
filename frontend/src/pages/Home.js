@@ -5,7 +5,7 @@ import useFetch from "../services/strapi";
 
 const Home = () => {
 
-    const homePageData = useFetch("http://localhost:1337/api/home-page?populate=*")?.data;
+    const homePageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/home-page?populate=*")?.data;
 
     return (
         <Container>

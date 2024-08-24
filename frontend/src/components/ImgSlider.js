@@ -20,13 +20,13 @@ const ImgSlider = () => {
     pauseOnHover: false,
   };
 
-  const homePageData = useFetch("http://localhost:1337/api/home-page?populate=*")?.data;
+  const homePageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/home-page?populate=*")?.data;
   const sliderImagesData =  homePageData?.attributes?.Slider?.data;
 
   return (
     <Carousel {...settings}>
       {sliderImagesData?.map((image) => (
-        <img src={`http://localhost:1337${image.attributes.url}`} alt={image.attributes?.name}/>
+        <img src={`https://tranquil-citadel-56220-32a830561abf.herokuapp.com${image.attributes.url}`} alt={image.attributes?.name}/>
       ))}
     </Carousel>
   );

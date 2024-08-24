@@ -3,7 +3,7 @@ import styled from "styled-components";
 import useFetch from "../services/strapi";
 
 const AboutMe = () => {
-    const aboutMePageData = useFetch("http://localhost:1337/api/about-me-page/?populate[aboutSegment][populate]=Image")?.data;
+    const aboutMePageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/about-me-page/?populate[aboutSegment][populate]=Image")?.data;
     const segmentData = aboutMePageData?.attributes?.aboutSegment;
 
     return (
@@ -13,7 +13,7 @@ const AboutMe = () => {
                     <Title>{segment?.Title}</Title>
                     <Separator />
                     <Description reversed={index % 2 === 0}>
-                        <Image src={`http://localhost:1337${segment.Image.data.attributes.url}`} alt={segment?.Title} />
+                        <Image src={`https://tranquil-citadel-56220-32a830561abf.herokuapp.com${segment.Image.data.attributes.url}`} alt={segment?.Title} />
                         <Text>{segment?.Description}</Text>
                     </Description>
                 </Segment>
