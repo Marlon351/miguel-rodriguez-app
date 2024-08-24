@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_project_pages",
+  "info": {
+    "displayName": "ProjectPage",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ProjectInfoSegment": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.project-info-segment"
+    }
+  }
+}

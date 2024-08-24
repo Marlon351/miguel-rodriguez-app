@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_me_pages",
+  "info": {
+    "singularName": "about-me-page",
+    "pluralName": "about-me-pages",
+    "displayName": "About Me Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "aboutSegment": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.about-segment"
+    }
+  }
+}

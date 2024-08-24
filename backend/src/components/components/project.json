@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_components_projects",
+  "info": {
+    "displayName": "Project",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "BriefDescription": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ProjectPage": {
+      "displayName": "ProjectPage",
+      "type": "component",
+      "repeatable": false,
+      "component": "components.project-page"
+    }
+  }
+}
