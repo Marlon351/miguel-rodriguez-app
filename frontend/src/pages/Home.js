@@ -49,6 +49,7 @@ const Overlay = styled.div`
     height: 100%;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    overflow: hidden;
 `;
 
 const Content = styled.div`
@@ -57,6 +58,7 @@ const Content = styled.div`
     text-align: center;
     color: white;
     animation: ${slideIn} 1s ease-out;
+    overflow: hidden;
 `;
 
 const Title = styled.h1`
@@ -65,17 +67,31 @@ const Title = styled.h1`
     text-transform: uppercase;
     letter-spacing: 5px;
     margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        font-size: 40px;
+    }
 `;
 
 const Separator = styled.hr`
     border: 2px solid #fff;
+    width: 100%;
+    max-width: 500px;
     margin: 20px auto;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        max-width: 300px;
+    }
 `;
 
 const Description = styled.h2`
     font-size: 24px;
     font-weight: 300;
     letter-spacing: 3px;
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
 `;
 
 export default Home;

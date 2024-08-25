@@ -38,8 +38,7 @@ const Container = styled.section`
 `;
 
 const Card = styled.div`
-    width: 500px;
-    height: auto;
+    width: 500px; /* Original size */
     background-color: black;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -47,20 +46,36 @@ const Card = styled.div`
     box-sizing: border-box;
     z-index: 3;
     color: white;
+    
+    @media (max-width: 768px) {
+        width: 90%; /* Reduced size for smaller screens */
+        max-width: 400px;
+        padding: 15px;
+    }
 `;
 
 const Title = styled.h1`
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: lightskyblue;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+    }
 `;
 
 const Separator = styled.hr`
     width: 80%;
-    margin: 20px auto;
+    margin: 15px auto;
     border: 1px solid lightskyblue;
+
+    @media (max-width: 768px) {
+        width: 70%;
+        margin: 10px auto;
+    }
 `;
 
 const ContactInfo = styled.div`
@@ -70,19 +85,27 @@ const ContactInfo = styled.div`
 `;
 
 const ContactItem = styled.div`
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        margin-bottom: 8px;
+    }
 `;
 
 const Label = styled.p`
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #bbb;
     margin: 0;
 `;
 
 const Value = styled.p`
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     margin: 5px 0 0;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 `;
 
 export default ContactMe;

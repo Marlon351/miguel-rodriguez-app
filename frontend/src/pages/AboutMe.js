@@ -43,7 +43,7 @@ const Segment = styled.div`
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    padding: 40px;
+    padding-bottom: 20px;
     text-align: center;
     margin-bottom: 4px;
     box-sizing: border-box;
@@ -61,9 +61,11 @@ const Description = styled.div`
     flex-direction: ${props => (props.reversed ? 'row-reverse' : 'row')};
     align-items: center;
     justify-content: center;
+    margin: 0px;
     margin-top: 20px;
+    
 
-    @media (max-width: 768px) {
+    @media (max-width: 950px) {
         flex-direction: column;
     }
 `;
@@ -85,9 +87,10 @@ const Text = styled.h2`
     text-align: left;
     font-family: 'Open Sans', sans-serif;
 
-    @media (max-width: 768px) {
+    @media (max-width: 950px) {
         text-align: center;
         margin-top: 20px;
+        font-size: 0.9rem;
     }
 `;
 
@@ -96,7 +99,6 @@ const Separator = styled.hr`
     border: 0;
     height: 3px;
     background: #333;
-    margin: 0 auto 20px;
     border-radius: 1.5px;
 `;
 

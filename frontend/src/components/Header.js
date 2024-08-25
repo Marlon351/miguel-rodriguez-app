@@ -1,25 +1,38 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import hamburger from "../assets/hamburger-icon.png";
+import closeIcon from "../assets/close-icon.png";
 
-const Header = (props) => {
+const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
         <Nav>
-            <Menu>
-                <a href="/">
+            <HamburgerIcon onClick={toggleMenu}>
+                <Icon src={isOpen ? closeIcon : hamburger} alt="Menu Icon" />
+            </HamburgerIcon>
+            <Menu isOpen={isOpen}>
+                <Link to="/" onClick={toggleMenu}>
                     <span>HOME</span>
-                </a>
-                <a href="./aboutme">
+                </Link>
+                <Link to="/aboutme" onClick={toggleMenu}>
                     <span>ABOUT ME</span>
-                </a>
-                <a href="./projects">
+                </Link>
+                <Link to="/projects" onClick={toggleMenu}>
                     <span>PROJECTS</span>
-                </a>
-                <a href="/contactme">
+                </Link>
+                <Link to="/contactme" onClick={toggleMenu}>
                     <span>CONTACT ME</span>
-                </a>
+                </Link>
             </Menu>
         </Nav>
-    )
-}
+    );
+};
 
 const Nav = styled.nav`
     position: fixed;
@@ -30,6 +43,12 @@ const Nav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+        justify-content: space-between;
+        height: 60px;
+    }
 `;
 
 const Menu = styled.div`
@@ -41,6 +60,7 @@ const Menu = styled.div`
         display: flex;
         align-items: center;
         padding: 0 20px;
+        text-decoration: none;
 
         span {
             color: rgb(249, 249, 249);
@@ -73,6 +93,39 @@ const Menu = styled.div`
             visibility: visible;
         }
     }
+
+    @media (max-width: 768px) {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: ${({ isOpen }) => (isOpen ? "translateX(0)" : "translateX(100%)")};
+        transition: transform 0.3s ease-in-out;
+
+        a {
+            margin: 15px 0;
+        }
+    }
+`;
+
+const HamburgerIcon = styled.div`
+    display: none;
+
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        z-index: 3;
+    }
+`;
+
+const Icon = styled.img`
+    width: 30px;
 `;
 
 export default Header;
