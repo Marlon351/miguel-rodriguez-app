@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "URL": {
+      "type": "text"
+    },
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

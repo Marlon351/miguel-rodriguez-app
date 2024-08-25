@@ -43,6 +43,18 @@ export interface ComponentsProjectInfoSegment extends Schema.Component {
   };
 }
 
+export interface ComponentsLink extends Schema.Component {
+  collectionName: 'components_components_links';
+  info: {
+    displayName: 'Link';
+    icon: 'attachment';
+  };
+  attributes: {
+    URL: Attribute.Text;
+    Icon: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface ComponentsAboutSegment extends Schema.Component {
   collectionName: 'components_components_about_segments';
   info: {
@@ -62,6 +74,7 @@ declare module '@strapi/types' {
       'components.project': ComponentsProject;
       'components.project-page': ComponentsProjectPage;
       'components.project-info-segment': ComponentsProjectInfoSegment;
+      'components.link': ComponentsLink;
       'components.about-segment': ComponentsAboutSegment;
     }
   }

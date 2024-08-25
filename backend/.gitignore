@@ -116,3 +116,5 @@ build
 
 # path: ./.gitignore
 package-lock.json
+# Local Netlify folder
+.netlify

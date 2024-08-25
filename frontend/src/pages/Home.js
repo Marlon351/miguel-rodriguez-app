@@ -6,6 +6,7 @@ import useFetch from "../services/strapi";
 const Home = () => {
 
     const homePageData = useFetch("https://tranquil-citadel-56220-32a830561abf.herokuapp.com/api/home-page?populate=*")?.data;
+    const linksData = homePageData?.attributes?.Link;
 
     return (
         <Container>
@@ -14,6 +15,11 @@ const Home = () => {
                 <Title>{homePageData?.attributes?.title}</Title>
                 <Separator />
                 <Description>{homePageData?.attributes?.subtitle}</Description>
+                <Links>
+                    {linksData?.map((link) => (
+                        <Link href={link?.URL}><h1>LINKED IN</h1></Link>
+                    ))}
+                </Links>
             </Content>
             <ImgSlider />
         </Container>
@@ -92,6 +98,16 @@ const Description = styled.h2`
     @media (max-width: 768px) {
         font-size: 15px;
     }
+`;
+
+const Links = styled.div`
+    
+`;
+
+const Link = styled.a`
+    background-color: red;
+    width: 50px;
+    height: 50px;
 `;
 
 export default Home;

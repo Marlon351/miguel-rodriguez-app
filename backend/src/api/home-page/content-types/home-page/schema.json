@@ -19,14 +19,20 @@
       "type": "string"
     },
     "Slider": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "Link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.link"
     }
   }
 }

@@ -833,6 +833,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     title: Attribute.String;
     subtitle: Attribute.String;
     Slider: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    Link: Attribute.Component<'components.link', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
